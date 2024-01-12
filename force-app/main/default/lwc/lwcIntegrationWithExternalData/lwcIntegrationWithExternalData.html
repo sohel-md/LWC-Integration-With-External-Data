@@ -1,0 +1,39 @@
+<template>
+    <lightning-card title="Callout">
+        <div class="slds-var-m-around_medium">
+        <lightning-button label="Get External Accounts" onclick={buttonClick}>
+        </lightning-button>
+    </div>
+    </lightning-card>
+	<lightning-card title="Result">
+        <!-- Table start-->
+        <table class="slds-table slds-table_cell-buffer slds-table_bordered">
+            <!--Column Header start-->
+            <thead>
+                <tr class="slds-line-height_reset">
+                    <th class="" scope="col">
+                        <div class="slds-truncate" title="Name">Name</div>
+                    </th>
+                    <th class="" scope="col">
+                        <div class="slds-truncate" title="Description">Description
+                        </div>
+                    </th>
+                </tr>
+            </thead>
+            
+            <tbody>
+               <!--data is an array of record which is set in .js file-->
+                <template for:each={parsedData} for:item="res">
+                    <tr key={res.Id}>
+                        <th scope="col">
+                            <div>{res.Name}</div>
+                        </th>
+                        <th scope="col">
+                            <div>{res.Description}</div>
+                        </th>
+                    </tr>
+                </template>
+            </tbody>
+        </table>
+     </lightning-card>
+</template>
